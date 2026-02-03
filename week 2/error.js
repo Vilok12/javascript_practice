@@ -1,9 +1,0 @@
-try{console.log(gh)
-    console.log('dhgc')
-}
-catch(e){
-    console.log(e.name)
-    console.log(e.message)
-    console.log(e.stack)
-    console.log(e)
-}
