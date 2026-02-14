@@ -13,4 +13,4 @@ const userschema = new Schema({
   password: {type: String,required: [true, "password is required"]},
   cart: {type: [cartschema],default: []}
 })
-export const usermodel = model("user", userschema);
+export const UserModel = model("user", userschema);

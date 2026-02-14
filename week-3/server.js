@@ -1,7 +1,7 @@
 import exp from 'express'
 import { connect } from "mongoose"
-import { userapp } from './api/userapi.js'
-import { productapp } from './api/productapi.js'
+import { UserApp } from './api/userapi.js'
+import { ProductApp } from './api/productapi.js'
 
 const app = exp()
 
@@ -9,8 +9,8 @@ const app = exp()
 app.use(exp.json())
 
 // routes
-app.use('/userapi', userapp)
-app.use('/productapi', productapp)
+app.use('/userapi', UserApp)
+app.use('/productapi', ProductApp)
 
 // error handling middleware
 app.use((err, req, res, next) => {

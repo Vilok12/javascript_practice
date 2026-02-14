@@ -10,4 +10,4 @@ const productschema=new Schema({
         type:String,required:[true,"brand is required"]
     }
 })
-export const productmodel=new model("product",productschema)
+export const ProductModel=new model("product",productschema)

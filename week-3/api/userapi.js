@@ -1,33 +1,33 @@
 import exp from'express'
-export const userapp=exp.Router()
-import { usermodel } from '../modules/usermodule.js'
+export const UserApp=exp.Router()
+import { UserModel } from '../models/usermodel.js'
 import { hash } from 'bcryptjs'
 import { model } from 'mongoose'
-import { productmodel } from '../modules/productmodule.js'
+import { ProductModel } from '../models/productmodel.js'
 //  create user
-userapp.post('/user',async(req,res)=>{
+UserApp.post('/user',async(req,res)=>{
     // get newuser from body
     let newuser=req.body
-    await new usermodel(newuser).validate()
+    await new UserModel(newuser).validate()
     let newpassword=await hash(newuser.password,12)
     newuser.password=newpassword
     // create new user document
     // save user in database
-    let newuserdoc=new usermodel(newuser)
+    let newuserdoc=new UserModel(newuser)
     newuserdoc.save({validateBeforeSave:false})
     res.status(200).json({message:"user created",payload:newuserdoc})
 })
 
 // add items to the cart
-userapp.put("/usercart/user-id/:uid/product-id/:pid",async (req, res) => {
+UserApp.put("/usercart/user-id/:uid/product-id/:pid",async (req, res) => {
     const { uid, pid } = req.params
     // check user
-    const user = await usermodel.findById(uid);
+    const user = await UserModel.findById(uid);
     if (!user) {
       return res.status(404).json({ message: "user not found" })
     }
     // check product
-    const product = await productmodel.findById(pid);
+    const product = await ProductModel.findById(pid);
     if (!product) {
       return res.status(404).json({ message: "product not found" })
     }
@@ -45,9 +45,9 @@ userapp.put("/usercart/user-id/:uid/product-id/:pid",async (req, res) => {
 
 
 //  get user by id
-userapp.get('/user/:id',async(req,res)=>{
+UserApp.get('/user/:id',async(req,res)=>{
     let userid=req.params.id
-    let user=await usermodel.findById(userid).populate("cart.product", "name price");
+    let user=await UserModel.findById(userid).populate("cart.product", "name price");
     res.status(200).json(user)
 
 })
@@ -56,19 +56,19 @@ userapp.get('/user/:id',async(req,res)=>{
 
 
 // remove product from cart
-userapp.delete(
+UserApp.delete(
   "/usercart/user-id/:uid/product-id/:pid",
   async (req, res) => {
     const { uid, pid } = req.params;
 
     // check user
-    const user = await usermodel.findById(uid);
+    const user = await UserModel.findById(uid);
     if (!user) {
       return res.status(404).json({ message: "user not found" });
     }
 
     // remove product from cart
-    const updatedUser = await usermodel
+    const updatedUser = await UserModel
       .findByIdAndUpdate(
         uid,
         { $pull: { cart: { product: pid } } },
