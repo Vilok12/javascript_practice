@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav{
+    color: red;
+    padding: 30px;
+}
+header{
+    background-color: red;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+}
+header h1{
+    padding: 25px;
+}
+header p{
+    width: 470px;
+    padding-left: 25px;
+}
+header img{
+    padding-right: 150px;
+}
+main{
+    background-color: red;
+}
+.parent{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    background-color: rgb(94, 16, 16);
+    max-width: 435px;
+    padding-bottom: 65px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: left;
+}
+.card h3{
+    padding: 30px;
+    padding-top: 50px;
+}
+.card p{
+    padding: 30px;
+}

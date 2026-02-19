@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    padding: 50px;
+    background-color: rgb(219, 227, 230);
+}
+header h1{
+    padding: 5px;
+
+}
+header p{
+    padding: 5px;
+}
+header button{
+    padding: 5px;
+    background-color: rgb(62, 145, 201);
+}
+.parent{
+    display: flex;
+    padding: 60px;
+}
+.card{
+    border: none;
+
+}
+.card h1 {
+    padding: 5px;
+}
+.card p {
+    padding: 5px;
+}
+.card button {
+    padding: 5px;
+    background-color: rgb(165, 158, 158);
+    border-radius: 10%;
+}
+footer{
+    padding: 50px;
+}
