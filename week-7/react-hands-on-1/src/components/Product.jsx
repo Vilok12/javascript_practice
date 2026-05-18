@@ -1,15 +1,35 @@
 function Product({ product }) {
-    const { productId, name, price, brand, description, image } = product;
 
     return (
-        <div className="bg-blue-300 p-4 w-64 rounded-lg">
-            <img src={image} alt={name} className="w-full h-40 object-cover" />
-            <h3 className="font-bold">{name}</h3>
-            <h4>${price}</h4>
-            <h4>{brand}</h4>
-            <p className="text-sm">{description}</p>
+      <div className="bg-white w-72 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+  
+        <img 
+          src={product.image}
+          alt={product.name}
+          className="h-48 w-full object-cover"
+        />
+  
+        <div className="p-4">
+  
+          <h2 className="text-xl font-semibold">
+            {product.name}
+          </h2>
+  
+          <p className="text-sm text-gray-500 mb-1">
+            {product.brand}
+          </p>
+  
+          <p className="text-sm text-gray-700 mb-3">
+            {product.description}
+          </p>
+  
+          <p className="text-lg font-bold text-blue-600">
+            ${product.price}
+          </p>
+  
         </div>
+      </div>
     );
-}
-
-export default Product;
+  }
+  
+  export default Product;
