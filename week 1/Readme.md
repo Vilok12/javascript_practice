@@ -4,15 +4,7 @@ This repository contains JavaScript practice programs organized week-wise for le
 Folder Structure
 Bash
 
-javascript_practice/
-│
-├── week 1/
-├── week 2/
-├── week-3/
-├── week-5/
-├── week-6/
-├── week-7/
-└── blog-app/
+
 Topics Covered
 Operators
 
