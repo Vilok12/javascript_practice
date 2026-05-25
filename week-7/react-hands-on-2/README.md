@@ -1,7 +1,7 @@
-### ✅ Task Manager
+###  Task Manager
 Task Manager is a simple React application used to add and manage daily tasks.
 
-### 🚀 Features
+###  Features
 Add new tasks
 
 Select task priority
@@ -10,7 +10,7 @@ View task list
 
 Display total and completed tasks
 
-### 🛠 Technologies Used
+###  Technologies Used
 React JS
 
 Vite
@@ -19,7 +19,7 @@ CSS
 
 JavaScript
 
-### ▶️ Run the Project
+###  Run the Project
 
 npm install
 npm run dev
