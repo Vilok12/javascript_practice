@@ -1,6 +1,7 @@
 
-ChatGPT said:
-Frontend Assignments
+Frontend Assignments:
+
+
 This repository contains frontend assignments developed using HTML and CSS. The assignments help in understanding webpage structure, styling, layouts, and responsive design concepts.
 
 Features
